@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Form Etiketleri</h1>
+    <hr />
+    <h1>Kullanıcı Bilgileri</h1>
+    <form action="" method="get">
+      <label for="tc">TC</label>
+      <input
+        id="tc"
+        name="tc"
+        type="text"
+        placeholder="Lütfen TC giriniz"
+        required
+      />
+      <br />
+      <br />
+      <label for="name">Ad</label>
+      <input id="name" name="name" type="text" />
+      <br />
+      <br />
+      <label for="surname">Soyad</label>
+      <input id="surname" name="surname" type="text" />
+      <br />
+      <br />
+      <label for="pass">Şifre</label>
+      <input id="pass" name="pass" type="password" />
+      <br />
+      <br />
+      <label for="date">Tarih</label>
+      <input id="date" name="date" type="date" />
+      <br />
+      <br />
+      <label>Cinsiyetiniz</label>
+      <br />
+      <label for="erkek">Erkek</label>
+      <input id="erkek" name="erkek" type="radio" name="cinsiyet" />
+      <label for="kadin">Kadın</label>
+      <input id="kadin" name="kadin" type="radio" name="cinsiyet" />
+      <br />
+      <br />
+      <label for="egitim">Eğitim Durumunuz</label>
+      <select name="egitim" id="egitim">
+        <option value="sec">Seçiniz</option>
+        <option value="ilk">İlk Okul</option>
+        <option value="orta">Orta Okul</option>
+        <option value="lise">Lise</option>
+        <option value="ön">Ön Lisans</option>
+        <option selected value="lisans">Lisans</option>
+      </select>
+      <br />
+      <br />
+      <label for="check">Bildiğiniz Diller</label>
+      <br />
+      <input id="ing" name="ing" type="checkbox" />
+      <label for="ing">İngilizce</label>
+      <input id="tr" name="tr" type="checkbox" />
+      <label for="tr">Türkçe</label>
+      <input id="al" name="al" type="checkbox" />
+      <label for="al">Almanca</label>
+      <input id="fr" name="fr" type="checkbox" />
+      <label for="fr">Fransızca</label>
+      <br />
+      <br />
+      <label for="mail">Email</label>
+      <input id="mail" name="mail" type="email" required />
+      <br />
+      <br />
+      <label for="adres">Adres Bilgilerim</label>
+      <textarea id="adres" name="adres" cols="20" rows="5"></textarea>
+      <br />
+      <br />
+      <input type="submit" value="Submit" />
+      <input type="reset" value="reset" />
+    </form>
+  </body>
+</html>
