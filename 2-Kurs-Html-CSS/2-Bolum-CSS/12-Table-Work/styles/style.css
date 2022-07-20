@@ -1,0 +1,25 @@
+table {
+  border: 1px solid green;
+  width: 50%;
+}
+table tr th {
+  background-color: beige;
+  color: darkslateblue;
+}
+table tr td {
+  text-align: center;
+  background-color: #ddd;
+  height: 45px;
+}
+.active {
+  background-color: darkgray;
+}
+td:hover {
+  background-color: #c3c3c3;
+}
+table tr td span {
+  color: blue;
+}
+span {
+  color: red;
+}

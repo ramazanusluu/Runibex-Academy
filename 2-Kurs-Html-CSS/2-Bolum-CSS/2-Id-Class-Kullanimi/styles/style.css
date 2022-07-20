@@ -1,0 +1,18 @@
+#blue {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+.blue {
+  width: 150px;
+  height: 150px;
+  background-color: blueviolet;
+}
+.bold {
+  font-weight: bold;
+}
+.border {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}

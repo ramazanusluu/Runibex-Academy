@@ -1,0 +1,33 @@
+.c1 {
+  width: 100px;
+  height: 100px;
+}
+.c2 {
+  width: 400px;
+  height: 150px;
+}
+.c3 {
+  width: 50%;
+}
+.c4 {
+  width: 100%;
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
+}
+
+.center {
+  text-align: center;
+}
+div {
+  color: beige;
+}

@@ -1,0 +1,37 @@
+div {
+  width: 150px;
+  height: 80px;
+  background-color: burlywood;
+  transition: width 3s;
+  padding: 10px;
+}
+div:hover {
+  width: 300px;
+}
+
+#box {
+  padding: 10px;
+  width: 150px;
+  border: 1px solid black;
+  transition: all 2s;
+}
+
+#box:hover {
+  background-color: blanchedalmond;
+  color: darkcyan;
+}
+#kutuLinear {
+  transition-timing-function: linear;
+}
+#kutuEase {
+  transition-timing-function: ease;
+}
+#kutuEaseIn {
+  transition-timing-function: ease-in;
+}
+#kutuEaseOut {
+  transition-timing-function: ease-out;
+}
+#kutuEaseInOut {
+  transition-timing-function: ease-in-out;
+}

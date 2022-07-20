@@ -1,0 +1,23 @@
+.item li {
+  background-color: #eeeeee;
+  list-style: none;
+  padding: 5px;
+}
+.active {
+  background-color: #aeaeae !important;
+}
+.navbar li a {
+  color: black;
+  text-decoration: none;
+}
+.navbar li {
+  list-style-type: none;
+}
+.table {
+  border: 1px solid green;
+  width: 100%;
+}
+.table tr td {
+  background-color: #eeeeee;
+  height: 24px;
+}
