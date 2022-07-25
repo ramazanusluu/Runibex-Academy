@@ -1,6 +1,6 @@
 # Runibex Academy
 
-Runibex akademi programı kapsamında çalışmış olduğum HTML, CSS, BOOTSTRAP VE JAVASCRIPT kodlarının yer aldığı respodur.
+Runibex akademi programı kapsamında çalışmış olduğum HTML, CSS, BOOTSTRAP VE JAVASCRIPT kodlarının yer aldığı repodur.
 
 ## Içerik olarak
 
