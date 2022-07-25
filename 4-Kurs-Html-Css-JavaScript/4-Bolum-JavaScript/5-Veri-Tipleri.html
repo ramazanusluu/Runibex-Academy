@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="numberDogumYili">Doğum Yılınız : </label>
+    <input type="text" name="name" value="" id="textDogumYili" />
+    <input
+      type="button"
+      name="name"
+      value="Yaşımı Hesapla"
+      id=""
+      onclick="yasHeapla()"
+    />
+    <p>Yaşınız: <span id="yas"></span></p>
+    <p>Durum: <span id="durum"></span></p>
+    <script>
+      //Butona basıldığında yaş hesaplamanması
+      function yasHeapla() {
+        /*
+        1. inputa giren değeri al
+        2. içinde bulunduğumuz yılı al
+        3. iki değeri birbirinden çıkar
+        4. sonucu span elemntine yaz 
+        */
+        let dogumYili = document.getElementById("textDogumYili").value;
+        console.log("deger", dogumYili);
+        let yil = new Date().getFullYear();
+        let yas = yil - dogumYili;
+        document.getElementById("yas").innerText = yas;
+
+        //NaN: Not a Number
+        //Sayısal, sözel, mantıksal
+        let ad = "ramazan";
+        let sayi = 8;
+        let pi = 3.14;
+        let herseyYolundami = true;
+        let sayi2;
+        console.log(sayi2);
+        //---------------------------------------------------------
+        let sayimi = isNaN(sayi);
+        console.log(sayimi);
+      }
+    </script>
+  </body>
+</html>

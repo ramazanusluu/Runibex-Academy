@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      td {
+        border: 1px solid black;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      Koltuk sıra sayısı:
+      <input type="text" name="name" id="textSatir" value="" />
+    </div>
+    <input type="button" value="Tablo Olustur" name="" onclick="tiklandi()" />
+    <div id="eklenecek"></div>
+    <script>
+      function tiklandi() {
+        /*
+        a1 b1 c1 d1
+        a2 b2 c2 d2
+        a3 b3 c3 d3
+        */
+        let koltukSayisi = +document.getElementById("textSatir").value;
+        let harfler = ["A", "B", "C", "D"];
+        let table = document.createElement("table");
+        for (let index = 0; index <= koltukSayisi; index++) {
+          let tr = document.createElement("tr");
+          for (let j = 0; j < harfler.length; j++) {
+            let td = document.createElement("td");
+            td.innerText = harfler[j] + index;
+            tr.appendChild(td);
+          }
+          table.appendChild(tr);
+        }
+        document.getElementById("eklenecek").appendChild(table);
+      }
+    </script>
+  </body>
+</html>

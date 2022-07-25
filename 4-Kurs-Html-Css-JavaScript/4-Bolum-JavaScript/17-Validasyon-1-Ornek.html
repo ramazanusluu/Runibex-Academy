@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/" method="post">
+      <div>
+        <label for="textKullaniciAdi">Kullanıcı Adı</label>
+        <br />
+        <input
+          type="text"
+          name="name"
+          id="textKullaniciAdi"
+          class="kontrol zorunlu"
+          data-mesaj="Kullanıcı Adı boş olamaz"
+          data-hedef="spKullaniciAdi"
+        />
+        <span id="spKullaniciAdi"></span>
+      </div>
+      <div>
+        <label for="textSifre">Şifre</label>
+        <br />
+        <input
+          type="text"
+          name="name"
+          id="textsifre"
+          class="kontrol zorunlu"
+          data-mesaj="şifre hatalı"
+          data-hedef="spSifre"
+        />
+        <span id="spSifre"></span>
+      </div>
+      <div>
+        <label for="ulkeler">Bulunduğunuz Ülke</label>
+        <br />
+        <select
+          class="kontrol zorunlu"
+          name="ulke"
+          id="ulkeler"
+          data-mesaj="select kutusu"
+          data-hedef="spSelect"
+        >
+          <option value="">Seçiniz</option>
+          <option value="1">Turkiye</option>
+          <option value="2">Almanya</option>
+        </select>
+        <span id="spSelect"></span>
+      </div>
+      <div>
+        <input
+          type="submit"
+          value="Kayıt Ol"
+          name="name"
+          onclick="return denetle()"
+        />
+      </div>
+    </form>
+    <script>
+      function denetle() {
+        let elementler = document.getElementsByClassName("zorunlu");
+        console.log(elementler);
+        let uygunmu = false;
+        for (let i = 0; i < elementler.length; i++) {
+          let inputElement = document.getElementById(elementler[i].id);
+          let deger = inputElement.value;
+
+          if (deger === "") {
+            let hataMesajı = inputElement.getAttribute("data-mesaj");
+            let hedef = inputElement.getAttribute("data-hedef");
+            document.getElementById(hedef).innerText = hataMesajı;
+            uygunmu = false;
+          } else {
+            uygunmu = true;
+          }
+        }
+        return uygunmu;
+      }
+    </script>
+  </body>
+</html>

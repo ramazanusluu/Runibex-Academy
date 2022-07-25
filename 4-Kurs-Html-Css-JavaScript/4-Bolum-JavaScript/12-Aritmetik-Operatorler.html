@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="yuklendi()">
+    <input type="text" name="name" value="" id="textS1" /> +
+    <input type="text" name="name" value="" id="textS2" /> =
+    <span id="toplam"></span>
+    <br />
+    <input type="button" name="name" value="Topla" onclick="tiklandi()" />
+    <script>
+      function yuklendi() {
+        /*
+            + toplama
+            - çıkarma
+            * çarpma
+            / bölme
+            */
+        let x = 10;
+        let y = 2;
+        let kalan = x % y;
+        console.log(kalan);
+        //------------------------------
+        let sayac = 0;
+        // sayac = sayac + 1;
+        // sayac += 1;
+        // sayac++;
+
+        // console.log("sayac++", sayac++);
+        console.log("++sayac", ++sayac);
+      }
+      function tiklandi() {
+        let s1 = document.getElementById("textS1").value;
+        let s2 = document.getElementById("textS2").value;
+        let toplam = +s1 + +s2;
+        document.getElementById("toplam").innerText = toplam;
+      }
+    </script>
+  </body>
+</html>

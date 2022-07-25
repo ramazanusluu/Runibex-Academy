@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="calistir()">
+    <select name="aylar" id="aylar"></select>
+    <script>
+      function calistir() {
+        //Koşul sağlandığı sürece işlemi gerçekleştir
+        let aylar = [
+          "ocak",
+          "şubat",
+          "mart",
+          "nisan",
+          "mayıs",
+          "haziran",
+          "temmuz",
+          "ağustos",
+          "eylül",
+          "ekim",
+          "kasım",
+          "aralık",
+        ];
+        let index = 0;
+        //index'in değeri aylar arrayinin eleman sayısından üçük olduğu sürece;
+        //arrayin o elemanını option elementine dönüştür.
+        //ardından index değerini 1 arttır.
+        while (index < aylar.length) {
+          let option = document.createElement("option");
+          option.innerText = aylar[index++];
+          document.getElementById("aylar").appendChild(option);
+        }
+      }
+    </script>
+  </body>
+</html>

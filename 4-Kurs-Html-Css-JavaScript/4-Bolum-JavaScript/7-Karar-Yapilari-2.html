@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .alan {
+        border-radius: 20px;
+        border: 1px solid black;
+        padding: 15px;
+        width: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="alan">
+      <input
+        type="range"
+        min="1"
+        max="100"
+        step="1"
+        name="name"
+        value=""
+        id="rangeStok"
+        onchange="degerDegisti()"
+      />
+      <br />
+      Stok durumu : <span id="spanStok"></span>
+    </div>
+    <script>
+      function degerDegisti() {
+        /*
+        input elementinin değerini span'a yazdır
+        eğer input elementinin değeri;
+        - 30 ve altındaysa yazı rengi kırmızı
+        - 50 ve altındaysa siyah
+        - 100 ve altındaysa yesil
+        */
+        let deger = document.getElementById("rangeStok").value;
+        let span = document.getElementById("spanStok");
+        span.innerText = deger;
+
+        if (deger <= 30) {
+          span.style = "color:red";
+        } else if (deger <= 50) {
+          span.style = "color:black";
+        } else {
+          span.style = "color:green";
+        }
+      }
+    </script>
+  </body>
+</html>

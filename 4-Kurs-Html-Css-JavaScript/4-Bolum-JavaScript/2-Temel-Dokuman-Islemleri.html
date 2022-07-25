@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #mesaj {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="mesajGoster()">Tıklayınız...</button>
+    <br />
+    <span id="mesaj"></span>
+    <script>
+      function mesajGoster() {
+        //id'si mesaj olan elementin içeriğine "Merhaba Dünya" yaz.
+        document.getElementById("mesaj").innerText = "Merhaba Dünya";
+      }
+    </script>
+  </body>
+</html>

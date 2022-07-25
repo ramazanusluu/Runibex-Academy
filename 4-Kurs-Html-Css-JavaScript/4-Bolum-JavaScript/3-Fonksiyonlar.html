@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #mesaj {
+        color: red;
+      }
+      .mesajAlani {
+        float: left;
+        width: 150px;
+        height: 50px;
+        border: 1px solid black;
+        border-radius: 15px;
+        background-color: silver;
+        margin: 30px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="karsila()">Tıklayınız...</button>
+    <button onclick="ekle()">Ekle</button>
+    <button onclick="güncelle()">Güncelle</button>
+    <br />
+    <div class="mesajAlani">
+      <span id="mesaj"></span>
+    </div>
+    <div class="mesajAlani">
+      <span id="ekle"></span>
+    </div>
+    <div class="mesajAlani">
+      <span id="güncelle"></span>
+    </div>
+
+    <script>
+      function karsila() {
+        //id'si mesaj olan elementin içeriğine "Merhaba Dünya" yaz.
+        mesajYaz("mesaj", "Merhaba Dünya");
+      }
+      function ekle() {
+        mesajYaz("ekle", "Ekleme işlemi tamamlandı");
+      }
+      function güncelle() {
+        mesajYaz("güncelle", "Kayıt Güncellendi");
+      }
+      function mesajYaz(id, yazilacakMetin) {
+        document.getElementById(id).innerText = yazilacakMetin;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="yuklendi()">
+    <span id="mesaj"></span>
+    <br />
+    Şu anda ofis <span id="durum"></span>
+    <br />
+    <script>
+      function yuklendi() {
+        let tarih = new Date("2019-10-27T13:00:00");
+        let ay = tarih.getMonth();
+        let gun = tarih.getDate();
+        let saat = tarih.getHours();
+        let haftaninGunu = tarih.getDay();
+        let haftaSonumu = haftaninGunu == 6 || haftaninGunu == 0;
+
+        console.log("ay", ay, "gün", gun);
+
+        if (ay === 9 && gun === 29) {
+          document.getElementById("mesaj").innerText =
+            "Cumhuriyet bayramınız kutlu olsun";
+        }
+        //8'den küçük veya 18'den büyükse ofis kapalı değilse açık
+        if (saat < 8 || saat > 18 || haftaSonumu) {
+          document.getElementById("durum").innerText = "Kapalı";
+        } else {
+          document.getElementById("durum").innerText = "Açık";
+        }
+      }
+    </script>
+  </body>
+</html>
