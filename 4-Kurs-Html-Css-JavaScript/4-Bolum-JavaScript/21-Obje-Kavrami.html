@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="yuklendi()">
+    <table id="table"></table>
+    <script>
+      function yuklendi() {
+        let urun = {
+          ad: "Ayakkabı",
+          fiyat: 100,
+          kategori: "Giyim",
+          goster: function () {
+            console.log(this.ad, "isimli ürünün fiyatı", this.fiyat, "tl");
+          },
+          kdvliFiyat: function (oran) {
+            return this.fiyat * (1 + oran);
+          },
+        };
+        urun.goster();
+        console.log(urun.kdvliFiyat(0.18));
+        console.log(urun.ad);
+        urun.fiyat = 150;
+        console.log(urun);
+        //------------------------------------------------
+        let urunler = [
+          {
+            ad: "Tshirt",
+            fiyat: "50",
+            kategori: "giyim",
+          },
+          {
+            ad: "Şort",
+            fiyat: "65",
+            kategori: "giyim",
+          },
+        ];
+        for (let i = 0; i < urunler.length; i++) {
+          let tr = document.createElement("tr");
+          let urun = urunler[i];
+          for (const key in urun) {
+            console.log(urun[key]);
+            let td = document.createElement("td");
+            td.innerText = urun[key];
+            tr.appendChild(td);
+          }
+          document.getElementById("table").appendChild(tr);
+        }
+      }
+    </script>
+  </body>
+</html>

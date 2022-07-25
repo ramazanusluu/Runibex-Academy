@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div onclick="event4(event)" data-color="red">
+      <div onclick="event4(event)" data-color="blue">
+        <div onclick="event4(event)" data-color="green">
+          <button onclick="event4(event)" data-color="red">Tıkla</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function event1() {
+        alert("Event 1");
+      }
+      function event2() {
+        alert("Event 2");
+      }
+      function event3() {
+        alert("Event 3");
+      }
+      function event4(event) {
+        console.log(event);
+        // alert("Event 4");
+        event.cancelBubble = true;
+        event.target.style =
+          "background-color:" + event.target.getAttribute("data-color") + ";";
+      }
+    </script>
+  </body>
+</html>
