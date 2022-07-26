@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #posts {
+        display: none;
+      }
+    </style>
+    <script type="text/x-handlebars-template" id="temp">
+      <li>
+        <h2>{{title}}</h2>
+        <div>{{body}}</div>
+      </li>
+    </script>
+  </head>
+  <body>
+    <button id="getir">Postları Getir</button>
+    <button id="gonder">Gönder</button>
+    <div id="mesaj"></div>
+    <ul id="posts"></ul>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $("#getir").on("click", function () {
+          $.ajax({
+            url: "https://jsonplaceholder.typicode.com/posts",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+              console.log(data);
+              let template = $("#temp").html();
+              let binder = Handlebars.compile(template);
+              $.each(data, (index, element) => {
+                // let post = $(
+                //   "<li><h2>" +
+                //     element.title +
+                //     "</h2><p>" +
+                //     element.body +
+                //     "</p></li>"
+                // );
+                let post = binder(element);
+                $("#posts").append(post);
+              });
+              $("#posts").fadeIn("slow");
+            },
+            error: function (hata) {
+              console.log(hata);
+            },
+          });
+        });
+        $("#gonder").on("click", function () {
+          $.ajax({
+            url: "https://jsonplaceholder.typicode.com/posts",
+            type: "POST",
+            data: JSON.stringify({
+              title: "Baslik",
+              body: "yorum",
+              userId: 2,
+            }),
+            contentType: "application/json",
+            dataType: "json",
+            success: function (data) {
+              $("#mesaj")
+                .show("fast")
+                .text("Post Başarıyla eklendi")
+                .hide(2000);
+            },
+            error: function (hata) {
+              console.log(hata);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

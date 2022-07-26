@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        margin: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+    <ul id="kategoriler">
+      <li class="favori">Edebiyat</li>
+      <ul>
+        <li>Roman</li>
+        <li>Şiir</li>
+      </ul>
+      <li>Araştırma</li>
+      <li>Popüler Bilim</li>
+    </ul>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $("h1").text("Başlık kısmı");
+        let ul = $("#kategoriler");
+        console.log(ul);
+        $("#kategoriler").css({ color: "red" });
+        $(".favori").css({ "font-family": "Verdana" });
+        $("#kategoriler > li").css({ float: "left" });
+        $("li:odd").css({ color: "blue" });
+        $("li:even").css({ color: "green" });
+      });
+    </script>
+  </body>
+</html>

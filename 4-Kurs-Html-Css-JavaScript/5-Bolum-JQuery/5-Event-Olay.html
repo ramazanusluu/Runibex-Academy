@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .gizli {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="satisOnay" data-fiyat="10">
+      <label for="textAdet">Kitap Adeti : </label>
+      <input
+        type="number"
+        min="1"
+        step="1"
+        id="textAdet"
+        name="name"
+        value=""
+      />
+      <br />
+      <button id="goster">Açıklamaları Gizle/Göster</button>
+      <p class="gizli">Kargo KDV dahil</p>
+      <p>toplam Ucret: <span id="sonuc"></span></p>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //keydown, keyup, keyPress
+      $(document).ready(function () {
+        $("#textAdet").on("keyup", hesapla);
+        $("#textAdet").on("change", hesapla);
+        //mousedown, mouseup, mouseenter, mouseleave, mousemove, mouseover, mouseout, contextmenu, dbclick
+        $("#goster").on("mouseenter", function () {
+          //show-hide
+          //fadein-fadeout
+          //slideDown-slideUp
+          $(".gizli").fadeToggle(1000);
+        });
+      });
+      function hesapla() {
+        let fiyat = +$("#satisOnay").data("fiyat");
+        let adet = +$(this).val();
+        let sonuc = fiyat * adet;
+        $("#sonuc").text(sonuc);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .kitap {
+        background-color: rgb(52, 79, 139);
+        width: 300px;
+        height: 500px;
+        border-radius: 15px;
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        float: left;
+      }
+      ul {
+        list-style: none;
+      }
+      button {
+        margin-top: 30px;
+        width: 100%;
+        background-color: indianred;
+        color: white;
+      }
+      a {
+        color: white;
+      }
+      .aciklama {
+        display: none;
+      }
+      .secili {
+        background-color: rgb(178, 84, 25);
+      }
+      .animasyon {
+        top: 0px;
+        position: relative;
+        background-color: #1290b2;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="filtre">
+      <button class="yerli">Yerli</button>
+      <button class="yabanci">Yabancı</button>
+    </div>
+    <div id="kitaplar">
+      <ul>
+        <li class="kitap yerli" data-fiyat="20">
+          <h2>Denizler Altında 20000 Fersah</h2>
+          <a href="#">Açıklamayı Gizle/Göster</a>
+          <div class="aciklama">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi id
+              asperiores iure officiis repellendus deleniti.
+            </p>
+          </div>
+          <button>Fiyatı Göster</button>
+        </li>
+        <li class="kitap yabanci" data-fiyat="20">
+          <h2>Denizler Altında 20000 Fersah</h2>
+          <a href="#">Açıklamayı Gizle/Göster</a>
+          <div class="aciklama">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi id
+              asperiores iure officiis repellendus deleniti.
+            </p>
+          </div>
+          <button>Fiyatı Göster</button>
+        </li>
+        <li class="kitap yerli" data-fiyat="20">
+          <h2>Denizler Altında 20000 Fersah</h2>
+          <a href="#">Açıklamayı Gizle/Göster</a>
+          <div class="aciklama">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi id
+              asperiores iure officiis repellendus deleniti.
+            </p>
+          </div>
+          <button>Fiyatı Göster</button>
+        </li>
+        <li class="kitap yabanci" data-fiyat="20">
+          <h2>Denizler Altında 20000 Fersah</h2>
+          <a href="#">Açıklamayı Gizle/Göster</a>
+          <div class="aciklama">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi id
+              asperiores iure officiis repellendus deleniti.
+            </p>
+          </div>
+          <button>Fiyatı Göster</button>
+        </li>
+        <li class="kitap yerli" data-fiyat="20">
+          <h2>Denizler Altında 20000 Fersah</h2>
+          <a href="#">Açıklamayı Gizle/Göster</a>
+          <div class="aciklama">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi id
+              asperiores iure officiis repellendus deleniti.
+            </p>
+          </div>
+          <button>Fiyatı Göster</button>
+        </li>
+        <li class="kitap yabanci" data-fiyat="20">
+          <h2>Denizler Altında 20000 Fersah</h2>
+          <a href="#">Açıklamayı Gizle/Göster</a>
+          <div class="aciklama">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi id
+              asperiores iure officiis repellendus deleniti.
+            </p>
+          </div>
+          <button>Fiyatı Göster</button>
+        </li>
+        <li class="kitap yerli" data-fiyat="20">
+          <h2>Denizler Altında 20000 Fersah</h2>
+          <a href="#">Açıklamayı Gizle/Göster</a>
+          <div class="aciklama">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi id
+              asperiores iure officiis repellendus deleniti.
+            </p>
+          </div>
+          <button>Fiyatı Göster</button>
+        </li>
+      </ul>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $(".kitap").on("click", "button", function () {
+          let li = $(this).closest(".kitap");
+          let fiyat = li.data("fiyat");
+          let p = $("<p>" + fiyat + "   tl</p>");
+          let element = $("ul").children().first().next();
+          //   $("button").after(p);
+          $(this).closest(".kitap").append(p);
+          $(this).remove();
+        });
+        $("#filtre").on("click", ".yerli", function () {
+          $(".kitap").removeClass("secili");
+          $(".kitap").filter(".yerli").addClass("secili");
+        });
+        $("#filtre").on("click", ".yabanci", function () {
+          $(".kitap").removeClass("secili");
+          $(".kitap").filter(".yabanci").addClass("secili");
+        });
+        $(".kitap").on("click", "a", function (event) {
+          event.preventDefault();
+          let p = $(this).closest(".kitap").find(".aciklama");
+          if ($(p).is(":hidden")) {
+            $(p).slideDown();
+            $(this).text("Gizle");
+          } else {
+            $(p).slideUp();
+            $(this).text("Goster");
+          }
+        });
+        let tiklandiMi = false;
+        $(".kitap").on("click", function () {
+          if (!tiklandiMi) {
+            $(this).addClass("animasyon");
+            $(this).animate({ top: "-20px" }, 500);
+            tiklandiMi = true;
+          } else {
+            $(this).animate({ top: "0px" }, 500);
+            tiklandiMi = false;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
