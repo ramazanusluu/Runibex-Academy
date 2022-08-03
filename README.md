@@ -16,4 +16,4 @@ Runibex akademi programı kapsamında çalışmış olduğum HTML, CSS, BOOTSTRA
 - https://ramazan-admin-template.surge.sh/ - Admin Template Projesi
 
 - 4-Kurs-Html-Css-JavaScript
-  Udemy üzerinde bulunan Sıfırdan başlayanlar için HTML, CSS, JavaScript ve JQuery eğitim kursunun tekrar kodları yer almaktadır
+  Udemy üzerinde bulunan Sıfırdan başlayanlar için HTML, CSS, JavaScript ve JQuery eğitim kursunun tekrar kodları yer almaktadır.
